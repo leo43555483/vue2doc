@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "entry": {
+      "anyOf": [
+        {"type": "array"},
+        {"type": "string"}
+      ],
+      "properties": {
+        "entry": {
+          "type": "string"
+        },
+        "type": "object",
+        "properties": {
+          "include": {
+            "type": "array"
+          },
+          "exclide": {
+            "type": "array"
+          }
+        }
+      }
+    },
+    "include": {
+      "type": "array"
+    },
+    "exclide": {
+      "type": "array"
+    },
+    "ext": {
+      "type": "string"
+    },
+    "mime": {
+      "type": "array"
+    }
+  }
+}

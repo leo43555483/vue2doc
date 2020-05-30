@@ -1,0 +1,54 @@
+{
+  "name": "vue2doc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "auto vue documents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "vue2doc": "./bin/index.js"
+  },
+  "keywords": [
+    "vue",
+    "doc",
+    "document"
+  ],
+  "engines": {
+    "node": ">=8.9"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.0.0",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "@vue/babel-preset-jsx": "^1.1.2",
+    "@vue/component-compiler-utils": "^3.1.2",
+    "babel-loader": "^8.1.0",
+    "chalk": "^4.0.0",
+    "commander": "^5.1.0",
+    "css-loader": "^3.5.3",
+    "debug": "^4.1.1",
+    "file-loader": "^6.0.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "glob": "^7.1.6",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "schema-utils": "^2.6.6",
+    "semver": "^7.3.2",
+    "url-loader": "^4.1.0",
+    "vue": "^2.6.11",
+    "vue-loader": "^15.9.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
