@@ -9,9 +9,9 @@ const webpackConfig = (config) => ({
   target: 'web',
   devtool: 'none',
   mode: 'production',
-  stats: {
-    loggingDebug: [(name) => name.contains('TransformSFC')],
-  },
+  // stats: {
+  //   loggingDebug: [(name) => name.contains('TransformSFC')],
+  // },
   entry: {},
   output: {
     filename: '[name].js',
@@ -51,9 +51,6 @@ const webpackConfig = (config) => ({
               sourceMap: true,
             },
           },
-          // {
-          //   loader: require.resolve('../src/loader.js'),
-          // },
         ],
         exclude: /node_modules/,
       },
