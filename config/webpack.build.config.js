@@ -2,22 +2,30 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const path = require('path');
-const TransformSFC = require('../src/plugins/TransformSFC');
 
-const webpackConfig = {
+const TransformSFC = require('../lib/plugins/TransformSFC');
+
+const webpackConfig = (config) => ({
+  target: 'web',
+  devtool: 'none',
   mode: 'production',
   entry: {},
   output: {
     filename: '[name].js',
+    chunkFilename: '[name].chunk.js',
+  },
+  resolveLoader: {
+    modules: [path.join(process.cwd(), './node_modules')],
+  },
+  resolve: {
+    symlinks: false,
   },
   module: {
+    strictExportPresence: true,
     rules: [
       {
         test: /\.vue$/,
         use: [
-          // {
-          //   loader: path.resolve(__dirname, '../src/loader.js'),
-          // },
           {
             loader: 'vue-loader',
             options: {
@@ -32,9 +40,6 @@ const webpackConfig = {
       {
         test: /\.(js|jsx?)$/,
         use: [
-          // {
-          //   loader: path.resolve(__dirname, '../src/parsejs.js'),
-          // },
           {
             loader: 'babel-loader',
             options: {
@@ -43,7 +48,6 @@ const webpackConfig = {
               sourceMap: true,
             },
           },
-
         ],
         exclude: /node_modules/,
       },
@@ -71,14 +75,13 @@ const webpackConfig = {
     new ProgressBarPlugin(),
     new VueLoaderPlugin(),
     new FriendlyErrorsPlugin(),
-    new TransformSFC(),
+    new TransformSFC(config),
   ],
-};
+});
 
-module.exports = function getWebpackConfig(entry, output) {
-  console.log('getWebpackConfig', output);
+module.exports = function getWebpackConfig(entry, output, config) {
   return {
-    ...webpackConfig,
+    ...webpackConfig(config),
     entry: {
       ...webpackConfig.entry,
       ...entry,

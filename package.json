@@ -1,42 +1,45 @@
 {
   "name": "vue2doc",
   "version": "1.0.0",
-  "private": true,
-  "description": "auto vue documents",
-  "main": "index.js",
+  "description": "vue2doc",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=10"
   },
   "bin": {
     "vue2doc": "./bin/index.js"
   },
-  "keywords": [
-    "vue",
-    "doc",
-    "document"
-  ],
-  "engines": {
-    "node": ">=8.9"
-  },
-  "author": "",
-  "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.0.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "@vue/babel-preset-jsx": "^1.1.2",
     "@vue/component-compiler-utils": "^3.1.2",
+    "babel": "^6.23.0",
     "babel-loader": "^8.1.0",
+    "bufferutil": "^4.0.1",
+    "canvas": "^2.6.1",
     "chalk": "^4.0.0",
     "commander": "^5.1.0",
     "css-loader": "^3.5.3",
     "debug": "^4.1.1",
+    "execa": "^4.0.2",
     "file-loader": "^6.0.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
+    "fs-extra": "^9.0.0",
     "glob": "^7.1.6",
+    "jsdom": "^16.2.2",
+    "memfs": "^3.2.0",
+    "parse-comments": "^1.0.0",
+    "prettier": "^2.0.5",
     "progress-bar-webpack-plugin": "^2.1.0",
     "schema-utils": "^2.6.6",
     "semver": "^7.3.2",
+    "unionfs": "^4.4.0",
     "url-loader": "^4.1.0",
+    "utf-8-validate": "^5.0.2",
+    "vm": "^0.1.0",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.2",
     "vue-template-compiler": "^2.6.11",
@@ -50,5 +53,7 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
     "webpack-dev-server": "^3.11.0"
-  }
+  },
+  "author": "",
+  "license": "MIT"
 }
