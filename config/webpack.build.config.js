@@ -9,9 +9,6 @@ const webpackConfig = (config) => ({
   target: 'web',
   devtool: 'none',
   mode: 'production',
-  // stats: {
-  //   loggingDebug: [(name) => name.contains('TransformSFC')],
-  // },
   entry: {},
   output: {
     filename: '[name].js',

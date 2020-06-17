@@ -22,11 +22,13 @@ function create() {
   if (!entryFiles) {
     process.exit(1);
   }
-
-  configFile = merge(defaultConfig, configFile);
+  configFile = merge.strategy({
+    strategy: 'replace',
+    mime: 'replace',
+  })(defaultConfig, configFile);
   build(entryFiles, configFile)
     .then()
-    .catch(e => {
+    .catch((e) => {
       if (e.message === '100') {
         process.exit(1);
       }

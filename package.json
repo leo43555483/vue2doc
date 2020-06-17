@@ -9,7 +9,7 @@
     "node": ">=10"
   },
   "bin": {
-    "vue2doc": "./script/index.js"
+    "vue2doc": "./bin/index.js"
   },
   "dependencies": {
     "@babel/core": "^7.0.0",

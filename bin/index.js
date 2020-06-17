@@ -12,7 +12,7 @@ const checkNodeVersion = (expect, target) => {
       chalk.red(`
       You are using Node ${process.version}, ${target} requires Node ${expect}\n
       please upgrade your Node version.
-    `)
+    `),
     );
     process.exit(1);
   }
@@ -33,13 +33,13 @@ program
     const buildFilePath = path.join(__dirname, './create.js');
     const args = [buildFilePath, entryPpath, cmd.config || ''];
     execa('node', args, { stdio: 'inherit', cwd: process.cwd() })
-      .then(result => {
+      .then((result) => {
         if (result.failed) {
           process.exit(1);
         }
         console.log(chalk.green('success!'));
       })
-      .catch(e => {
+      .catch(() => {
         console.log(chalk.red('build failed'));
       });
   });
